@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = [2,6,1,577,52,25,7]
+        let max = a[0];    //最大值
+        let min = a[0];    //最小值
+        for (let i = 1; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i]
+            }
+            if (min > a[i]) {
+                min = a[i]
+            }
+        }
+        document.write(`最大值是${max}`);
+        document.write('<br>')
+        document.write(`最小值是${min}`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

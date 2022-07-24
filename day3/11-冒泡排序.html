@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        // 1.外层循环控制 趟数 循环4次 arr.length - 1
+        for (let i = 0; i < arr.length - 1; i++) {
+            // 2.内层循环 控制一趟交换几次 arr.length -i - 1次
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                // 交换两个变量 升序排序
+                if (arr[j] > arr[j + 1]) {
+                    let temp =arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>
