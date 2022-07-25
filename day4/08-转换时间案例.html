@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let time = +prompt('请输入总的秒数：');
+        let h = 0,m = 0,s = 0;
+        function timeTransf(t){
+            h = parseInt(t / 3600);
+            m = parseInt((t % 3600) / 60);
+            s = parseInt(t % 60);
+            // 补零
+            if (h<10) {
+                h = '0' + h
+            }
+            if (m<10) {
+                m = '0' + m
+            }
+            if (s<10) {
+                s = '0' + s
+            }
+            return `时间为：${h}小时 ${m}分 ${s}秒`
+        }
+        let str = timeTransf(time)
+        document.write(str)
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击我</button>
+    <script>
+        // 匿名函数用法
+        // let btn = document.querySelector('button')
+        // btn.addEventListener('click',function(){
+        //     alert('你好 周杰伦')
+        // })
+        (function(){
+            console.log('匿名函数1');
+        })();       //多个立即执行函数要用;隔开
+        (function(){
+            console.log('匿名函数2');
+        })();
+    </script>
+</body>
+</html>
