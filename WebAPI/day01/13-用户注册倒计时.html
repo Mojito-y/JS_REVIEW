@@ -24,6 +24,7 @@
         // 2.2 开启定时器 间歇函数  timer 定时器的序号id
         let timer = setInterval(function () {
             i--
+            // console.log(i);
             btn.innerHTML = `我已经阅读用户协议(${i})`
             if (i === 0) {
                 // 不走了，清除定时器 

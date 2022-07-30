@@ -10,23 +10,23 @@
 </head>
 
 <body>
-    <input type="text" value="请输入">
+    <input type="text" value="请输入密码">
     <button disabled>按钮</button>
-    <input type="checkbox" name="" id="" class="agree">
+    <input type="checkbox" class="agree">
     <script>
         // 1. 获取元素
-        let input = document.querySelector('input')
+        let input  = document.querySelector('input');
         // 2. 取值或者设置值  得到input里面的值可以用 value
         // console.log(input.value)
-        input.value = '小米手机'
+        input.value = '周杰伦'
         input.type = 'password'
-
         // 2. 启用按钮
-        let btn = document.querySelector('button')
+        let btn = document.querySelector('button');
+        
         // disabled 不可用   =  false  这样可以让按钮启用
-        btn.disabled = false
+        // btn.disabled = false;
         // 3. 勾选复选框
-        let checkbox = document.querySelector('.agree')
+        let checkbox = document.querySelector('.agree');
         checkbox.checked = false
     </script>
 </body>

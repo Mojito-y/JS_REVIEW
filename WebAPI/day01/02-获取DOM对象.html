@@ -10,31 +10,41 @@
 
 <body>
     <div>我是一个盒子</div>
-    <div>我是er个盒子</div>
+    <div>我是二个盒子</div>
     <div class="three">我是三个盒子</div>
     <ul>
         <li>1</li>
         <li>2</li>
         <li>3</li>
     </ul>
+    <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方式</li>
+    </ul>
     <span>就1个</span>
     <script>
         // 1. js 获取 第一个元素 
         // let div = document.querySelector('div')
-        // let div = document.querySelector('.three')
-        // console.log(div)
+        let div = document.querySelector('.three')  //获取第三个div
+        console.log(div);
 
-        // let li = document.querySelector('ul li:last-child')
-        // console.log(li)
+        let li = document.querySelector('ul li:last-child')
+        console.log(li);
+        
         // 2. 获取多个元素  伪数组
         let lis = document.querySelectorAll('ul li')
-        // console.log(lis)   [div, div, div]
+        console.log(lis);
         // 通过遍历的方式，获得里面的每一个dom对象（元素）
         for (let i = 0; i < lis.length; i++) {
-            console.log(lis[i])
+            console.log(lis[i]);
         }
-        let span = document.querySelectorAll('span')
-        console.log(span)
+        //控制台一次输出3个li的DOM对象
+        let lis1 = document.querySelectorAll('.nav li')
+        console.log(lis1);
+        for (let i = 0; i < lis1.length; i++) {
+            console.log(lis1[i]);
+        }
     </script>
 </body>
 

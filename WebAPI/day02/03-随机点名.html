@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 40px;
+            border: 1px solid pink;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>开始点名吧</div>
+    <button>点击点名</button>
+    <script>
+        // 1. 获取元素  div 和 button 
+        let box = document.querySelector('div');
+        let btn = document.querySelector('button');
+        // 2. 随机函数
+        function getRandom(min,max){
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 声明一个数组
+        let nameArr = ['周杰伦','林俊杰','邓紫棋','石阳','刘聪','杨和苏','张靓颖','令狐冲','jaychou',]
+        // 3. 事件监听
+        btn.addEventListener('click',() => {
+            let i = getRandom(0,nameArr.length - 1) //获取随机数组序号
+            box.innerHTML = nameArr[i]
+            // console.log(i);
+            nameArr.splice(i,1);        //删除抽取到的人名
+            console.log(nameArr);
+            if (nameArr.length === 0) { //如果数组里的人抽完删完则禁用点名按钮
+                btn.disabled = true;
+                btn.innerHTML = '点名完毕'
+                
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

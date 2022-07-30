@@ -19,13 +19,13 @@
 
     <script>
         // 1. 获取图片元素
-        let pic = document.querySelector('img')
+        let pic = document.querySelector('img');
         // 2. 随机得到图片序号
-        function getRandom(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min
+        function random(min,max){
+            return Math.floor(Math.random()*(max - min +1)) + min
         }
-        let num = getRandom(1, 6)
-        // 3. 完成src 属性赋值
+        let num = random(1,6)
+
         pic.src = `./images/${num}.webp`
     </script>
 </body>
