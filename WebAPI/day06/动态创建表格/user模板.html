@@ -171,6 +171,12 @@
         // alert('你点击了链接')
         // 删除操作  删除 数组里面的数据  arr.splice(从哪里开始删，1)
         // 我要得到a的id 需要
+        // 第一条数据不允许删除
+        console.log(typeof e.target.dataset.id);
+        if (e.target.dataset.id == 0) {
+          alert('当前数据不允许删除操作')
+          return
+        }
         console.log(e.target.id)
         console.log(e.target.dataset.id)
         arr.splice(e.target.dataset.id, 1)
