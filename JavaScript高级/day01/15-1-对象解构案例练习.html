@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求①： 有个对象： const pig = { name: '佩奇',age: 6 }
+        // 结构为变量: 完成对象解构，并以此打印出值
+        const pig = {
+            name:'佩奇',
+            age:6
+        }
+        const {name,age} = pig
+        console.log(name,age);
+        // 需求②：请将pig对象中的name，通过对象解构的形式改为 uname，并打印输出
+        const {name : uname,age : age1} = pig
+        console.log(uname,age1);
+        // 需求③：请将 数组对象, 完成 商品名和价格的解构
+        const goods = [
+            {
+                goodsName: '小米',
+                price: 1999
+            }
+        ]
+        const [{goodsName,price}] = goods
+        console.log(goodsName,price);
+    </script>
+    
+</body>
+</html>
