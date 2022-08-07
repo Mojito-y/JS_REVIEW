@@ -10,7 +10,6 @@
 
 <body>
   <script>
-    // arr.reduce(function(累计值, 当前元素){}, 起始值)
     // arr.reduce(function (prev, item) {
     //   // console.log(11)
     //   // console.log(prev)
@@ -22,9 +21,11 @@
     //   return prev + item
     // })
 
-    const arr = [1, 2, 3]
-    const re = arr.reduce((prev, item) => prev + item)
-    console.log(re)
+    const arr = [1,2,3]
+    // arr.reduce(function(累计值, 当前元素){}, 起始值)
+    const count = arr.reduce((prev,item) => prev + item)
+    console.log(count);
+
   </script>
 </body>
 
