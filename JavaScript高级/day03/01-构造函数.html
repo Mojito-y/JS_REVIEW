@@ -20,7 +20,8 @@
       // }
     }
     // 2. 公共的方法写到原型对象身上   节约了内存
-    Star.prototype.sing = function () {
+    // console.dir(Star.prototype);
+    Star.prototype.sing = function(){
       console.log('唱歌')
     }
     const ldh = new Star('刘德华', 55)
