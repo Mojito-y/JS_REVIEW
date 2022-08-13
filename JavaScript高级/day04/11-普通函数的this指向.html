@@ -12,20 +12,20 @@
   <button>点击</button>
   <script>
     // 普通函数：  谁调用我，this就指向谁
-    console.log(this)  // window
+    console.log(this)   // window 
     function fn() {
-      console.log(this)  // window    
+      console.log(this)   // window 
     }
     window.fn()
     window.setTimeout(function () {
-      console.log(this) // window 
+      console.log(this)   // window 
     }, 1000)
     document.querySelector('button').addEventListener('click', function () {
-      console.log(this)  // 指向 button
+      console.log(this)   // 指向 button 
     })
     const obj = {
       sayHi: function () {
-        console.log(this)  // 指向 obj
+        console.log(this)  // 指向 obj 
       }
     }
     obj.sayHi()
