@@ -1,5 +1,4 @@
 
-
     window.onload = function () {
       // 定时器，每隔 1 秒执行 1 次
       setInterval(() => {
@@ -19,5 +18,4 @@
     function padZero(n) {
       return n > 9 ? n : '0' + n
     }
-  
   

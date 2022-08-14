@@ -1,8 +1,8 @@
 const fs = require('fs')
 
-fs.readFile('./files/11.txt', 'utf8', function(err, dataStr) {
+fs.readFile('./files/1.txt','utf8',(err,result) => {
   if (err) {
-    return console.log('读取文件失败！' + err.message)
+    return console.log('文件读取失败！' + err.message);
   }
-  console.log('读取文件成功！' + dataStr)
+  console.log('文件读取成功，内容是：' + result);
 })
