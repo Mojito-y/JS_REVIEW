@@ -18,7 +18,7 @@
         $('#btnGET').on('click', function () {
           $.ajax({
             type: 'GET',
-            url: 'http://127.0.0.1/api/get',
+            url: 'http://127.0.0.1:8081/api/get',
             data: { name: 'zs', age: 20 },
             success: function (res) {
               console.log(res)
@@ -29,7 +29,7 @@
         $('#btnPOST').on('click', function () {
           $.ajax({
             type: 'POST',
-            url: 'http://127.0.0.1/api/post',
+            url: 'http://127.0.0.1:8081/api/post',
             data: { bookname: '水浒传', author: '施耐庵' },
             success: function (res) {
               console.log(res)
@@ -41,7 +41,7 @@
         $('#btnDelete').on('click', function () {
           $.ajax({
             type: 'DELETE',
-            url: 'http://127.0.0.1/api/delete',
+            url: 'http://127.0.0.1:8081/api/delete',
             success: function (res) {
               console.log(res)
             },
@@ -52,7 +52,7 @@
         $('#btnJSONP').on('click', function () {
           $.ajax({
             type: 'GET',
-            url: 'http://127.0.0.1/api/jsonp',
+            url: 'http://127.0.0.1:8081/api/jsonp',
             dataType: 'jsonp',
             success: function (res) {
               console.log(res)

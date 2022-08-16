@@ -5,8 +5,8 @@ HTTP（hypertext transport protocol）协议『超文本传输协议』，协议
 ## 请求报文
 重点是格式与参数
 ```
-行      POST  /s?ie=utf-8  HTTP/1.1 
-头      Host: atguigu.com
+行      POST  /s?ie=utf-8  HTTP/1.1   请求类型 url HTTP协议版本
+头      Host: atguigu.com                                       
         Cookie: name=guigu
         Content-type: application/x-www-form-urlencoded
         User-Agent: chrome 83
@@ -19,7 +19,7 @@ HTTP（hypertext transport protocol）协议『超文本传输协议』，协议
 行      HTTP/1.1  200  OK
 头      Content-Type: text/html;charset=utf-8
         Content-length: 2048
-        Content-encoding: gzip
+        Content-encoding: gzip          压缩方式
 空行    
 体      <html>
             <head>
