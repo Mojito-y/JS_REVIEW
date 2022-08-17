@@ -16,25 +16,25 @@
     <button>发送请求</button>
     <div id="result"></div>
     <script>
-        const btn = document.querySelector('button');
+       const btn = document.querySelector('button');
 
-        btn.onclick = function(){
-            //1. 创建对象
-            const x = new XMLHttpRequest();
-            //2. 初始化设置
-            x.open("GET", "http://127.0.0.1:8000/cors-server");
-            //3. 发送
-            x.send();
-            //4. 绑定事件
-            x.onreadystatechange = function(){
-                if(x.readyState === 4){
-                    if(x.status >= 200 && x.status < 300){
-                        //输出响应体
-                        console.log(x.response);
-                    }
+       btn.addEventListener('click',() => {
+        // 1.创建对象
+        const x = new XMLHttpRequest();
+        // 2.初始化设置
+        x.open('post','http://127.0.0.1:8000/cors');
+        // 3.发送
+        x.send();
+        // 4.绑定事件 处理响应结果
+        x.onreadystatechange = () => {
+            if (x.readyState === 4) {
+                if (x.status >= 200 && x.status <300) {
+                    console.log(x.response);
                 }
+                
             }
         }
+       })
     </script>
 </body>
 </html>
