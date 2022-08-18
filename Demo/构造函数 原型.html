@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var x = 10;
+        var obj = {
+            x: 20,
+            f: function(){
+                console.log(this.x);      
+                var foo = function(){ 
+                    console.log(this.x);    
+                    }
+                foo(); 
+            }
+        };
+        obj.f();
+
+/* 20 10 第一个再对象方法里，指向相应对象，第二个this为函数内this，没有对象，指向windows
+this指向最后调用它的对象 */
+    </script> -->
+    <!-- <script>
+        function Fn(){
+            var n = 10
+            this.m = 20
+            this.a = function() {
+                console.log(this.m);
+            }
+        }
+
+        var f1 = new Fn;
+
+        Fn.prototype = {
+            a: function(){
+                console.log(this.m + 10);
+            }
+        }
+
+        var f2 = new Fn;
+
+        console.log(f1.constructor) // 输出结果
+        console.log(f2.constructor) // 输出结果
+        f1.a() // 输出结果
+        f2.a() // 输出结果
+        f2.__proto__.a() // 输出结果 
+    </script>
+    -->
+
+        
+</body>
+</html>
