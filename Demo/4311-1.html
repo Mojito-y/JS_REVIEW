@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现千分位转换</title>
+    <style>
+        .input{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="input" id="input"/>
+    <span></span>
+    <script>
+        const input = document.querySelector('#input');
+        const span = document.querySelector('span');
+        // 失去焦点时转换为千分位
+        input.addEventListener('mouseleave',() => {
+            let numInput = parseInt(input.value)
+            span.innerHTML = toThousands(numInput)
+        })
+        function toThousands(num) {
+    	  if(!num) return; 
+    	  var dot="";
+    	  var numb="";
+		  num=num.toString();
+    	  if((num||0).toString().indexOf(".")>-1){
+    	  		dot=num.substring(num.indexOf("."));//.6689
+    	  		numb=num.substring(0,num.indexOf("."));//123456723456
+    	  }else{
+    		  numb=num;
+    	  }
+    	    var result = [ ], counter = 0;
+    	    numb = numb.split('');
+    	    for (var i = numb.length - 1; i >= 0; i--) {
+    	        counter++;
+    	        result.unshift(numb[i]);
+    	        if ((counter % 3==0) && i != 0) { result.unshift(','); }
+    	    }
+    	    return result.join('')+dot;
+    }
+    </script>
+
+</body>
+</html>
