@@ -54,6 +54,16 @@
     o.family.baby = '老pink'
     console.log(obj);
 
+    function containsRepeatingLetter(str) {
+    for(let i=0;i<str.length;i++){
+        //charAt() 方法可返回指定位置的字符,参数index表示字符串中某个位置的数字
+        if(str.charAt(i)===str.charAt(i+1)&& ((str.charAt(i)>='a')&&(str.charAt(i)<='z'))||((str.charAt(i)>='A')&&(str.charAt(i)<='Z')) ){
+            return true;
+        }
+    }
+    return false;
+}
+
   </script>
 </body>
 

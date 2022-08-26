@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2{
+            height: 100px;
+            width: 100px;
+        }
+        .box1{
+            background: red;
+            float:left;
+        }
+        .box2{
+            background: orange;
+        }
+        .p{
+            color: gray;
+        }
+        .b{
+            color: red;
+        }
+        .a{
+            color: blue;
+        }
+        .parent{font-size: 16px;}.child{font-size: 2em;height: 3em;}
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <p class="a b">hello world</p>
+    <p class="child">hello world</p>
+<script>
+    // t1
+    /* let a = {a:30}
+    let b = {b:10}
+    let obj={
+        a:10
+    }
+    obj[b] = 20
+    console.log(obj[a]); */
+
+    // t8
+    // var x = 0;
+    // switch (++x) {
+    //     case 0:++x;
+    //     case 1:++x;
+    //     case 2:++x;
+    // }
+    // console.log(x);
+    // t9
+    /* async function foo(){
+        console.log(2);
+        console.log(await Promise.resolve(8));
+        console.log(9);
+        console.log(await Promise.resolve(18));
+        console.log(19);
+    }
+    async function bar(){
+        console.log(4);
+        console.log(await 6);
+        console.log(7);
+    }
+    console.log(1);
+    foo();
+    console.log(3);
+    bar();
+    console.log(5); */
+    // t11
+    /* console.log(typeof NaN);
+    console.log(typeof undefined);
+    console.log(typeof null);
+    console.log(typeof "sd");
+    console.log(typeof 0); */
+    // t4
+    var a = 10.52
+    console.log(Math.ceil(a));
+    console.log(Math.floor(a));
+    console.log(a.split('.')[0]);
+</script>    
+</body>
+</html>
