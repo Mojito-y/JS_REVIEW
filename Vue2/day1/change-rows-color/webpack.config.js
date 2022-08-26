@@ -25,7 +25,7 @@ module.exports = {
     // 指定生成的文件放在哪里
     output:{
         path:path.join(__dirname,'./dist'), //输出文件的存放路径
-        filename:'bundle.js'    //输出文件的名称
+        filename:'js/bundle.js'    //输出文件的名称
     },
     // 3.插件的数组 将来webpack运行时会加载并调用这些插件
     plugins:[htmlPlugin],
@@ -35,7 +35,12 @@ module.exports = {
             // test 表示匹配的文件类型， use 表示对应要调用的 loader
             {test:/\.css$/,use:['style-loader','css-loader']},
             // 处理.less文件的loader
-            {test:/\.less$/,use:['style-loader','css-loader','less-loader']}
-        ]
+            {test:/\.less$/,use:['style-loader','css-loader','less-loader']},
+            // 处理图片文件的loader
+            // 如果需要调用的loader只有一个 则只传递一个字符串也行，多个必须指定数组
+            {test:/\.jpg|png|gif$/,use:'url-loader?limit=800&outputPath=images'},        ]
     },
+    // 开发调试阶段 使用eval-source-map保证“运行时报错的行数”与源代码的行数一致
+    // nosources-source-map能定位 但是看不到源码 防止源码泄露，提高网站的安全性
+    devtool:'nosources-source-map'
 }

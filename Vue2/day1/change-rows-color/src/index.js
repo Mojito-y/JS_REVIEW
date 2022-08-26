@@ -4,8 +4,11 @@ import $ from 'jquery'
 import './css/index.css'
 import './css/index.less'
 
-// 1.导入图片，得到
-
+// 1.导入图片，得到图片文件
+import logo from './images/logo.jpg'
+consle.log(logo);
+// 2.给img标签的src动态赋值
+$('.box').attr('src',logo)
 // 2.定义 jQuery的入口函数
 $(function(){
     // 3.实现奇偶行的变色效果
