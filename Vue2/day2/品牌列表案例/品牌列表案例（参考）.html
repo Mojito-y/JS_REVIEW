@@ -20,7 +20,7 @@
       </div>
       <div class="card-body">
         <!-- 添加品牌的表单区域 -->
-        <!-- form表单元素有submit事件 -->
+        <!-- form 表单元素有 submit 事件 -->
         <form @submit.prevent="add">
           <div class="form-row align-items-center">
             <div class="col-auto">
@@ -52,16 +52,18 @@
       </thead>
       <tbody>
         <tr v-for="item in list" :key="item.id">
-          <td>{{item.id}}</td>
-          <td>{{item.name}}</td>
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
           <td>
             <div class="custom-control custom-switch">
-              <input type="checkbox" class="custom-control-input" :id="'customSwitch'+item.id" v-model="item.status">
-              <label class="custom-control-label" :for="'customSwitch'+item.id" v-if="item.status">已启用</label>
-              <label class="custom-control-label" :for="'customSwitch'+item.id" v-else>已禁用</label>
+              <!-- 使用 v-model 实现双向数据绑定 -->
+              <input type="checkbox" class="custom-control-input" :id="'cb' + item.id" v-model="item.status">
+              <!-- 使用 v-if 结合 v-else 实现按需渲染 -->
+              <label class="custom-control-label" :for="'cb' + item.id" v-if="item.status">已启用</label>
+              <label class="custom-control-label" :for="'cb' + item.id" v-else>已禁用</label>
             </div>
           </td>
-          <td>{{item.time}}</td>
+          <td>{{ item.time }}</td>
           <td>
             <a href="javascript:;" @click="remove(item.id)">删除</a>
           </td>
@@ -73,44 +75,44 @@
   <script src="./lib/vue-2.6.12.js"></script>
   <script>
     const vm = new Vue({
-      el:'#app',
-      data:{
+      el: '#app',
+      data: {
         // 用户输入的品牌名称
-        brand:'',
-        // nextId是下一个 可用的id
-        nextId:4,
-        // 品牌列表数据
-        list:[
-          {id:1,name:'宝马',status:true,time:new Date()},
-          {id:2,name:'奔驰',status:false,time:new Date()},
-          {id:3,name:'奥迪',status:true,time:new Date()},
-        ]
+        brand: '',
+        // nextId 是下一个，可用的 id
+        nextId: 4,
+        // 品牌的列表数据
+        list: [
+          { id: 1, name: '宝马', status: true, time: new Date() },
+          { id: 2, name: '奔驰', status: false, time: new Date() },
+          { id: 3, name: '奥迪', status: true, time: new Date() },
+        ],
       },
       methods: {
         // 点击链接，删除对应的品牌信息
-        remove(id){
+        remove(id) {
           this.list = this.list.filter(item => item.id !== id)
         },
-        // 阻止表单的默认提交行为之后，触发add方法
-        add(){
-          // 如果判断到brand的值为空字符串 则return出去
-          if (this.brand === '') return alert('必须填写品牌名称!');
+        // 阻止表单的默认提交行为之后，触发 add 方法
+        add() {
+          // 如果判断到 brand 的值为空字符串，则 return 出去
+          if (this.brand === '') return alert('必须填写品牌名称！')
 
-          // 如果没有被return出去 应该执行添加的逻辑
-          // 1.先把要添加的品牌对象 整理出来
+          // 如果没有被 return 出去，应该执行添加的逻辑
+          // 1. 先把要添加的品牌对象，整理出来
           const obj = {
-            id:this.nextId,
-            name:this.brand,
-            status:true,
-            time:new Date()
-          };
-          // 2.往this.list数组中push步骤1中得到的对象
-          this.list.push(obj);
-          // 3.清空this.brand；让this.nextId自增 +1
-          this.brand = '';
-          this.nextId++;
+            id: this.nextId,
+            name: this.brand,
+            status: true,
+            time: new Date()
+          }
+          // 2. 往 this.list 数组中 push 步骤 1 中得到的对象
+          this.list.push(obj)
+          // 3. 清空 this.brand；让 this.nextId 自增 +1
+          this.brand = ''
+          this.nextId++
         }
-      }
+      },
     })
   </script>
 </body>

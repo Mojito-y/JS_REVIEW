@@ -12,18 +12,10 @@
   <!-- 希望 Vue 能够控制下面的这个 div，帮我们在把数据填充到 div 内部 -->
   <div id="app">
     <p v-text="username"></p>
-    <p v-text="gender">性别：</p>
-
+    <p v-text="gender">性别</p>
+    <p>性别:{{gender}}</p>
     <hr>
-
-    <p>姓名：{{ username }}</p>
-    <p>性别：{{ gender }}</p>
-
-    <hr>
-
-    <div v-text="info"></div>
-    <div>{{ info }}</div>
-    <div v-html="info"></div>
+    <div v-html="discription"></div>
   </div>
 
   <!-- 1. 导入 Vue 的库文件，在 window 全局就有了 Vue 这个构造函数 -->
@@ -36,9 +28,9 @@
       el: '#app',
       // data 对象就是要渲染到页面上的数据
       data: {
-        username: 'zhangsan',
-        gender: '女',
-        info: '<h4 style="color: red; font-weight: bold;">欢迎大家来学习 vue.js</h4>'
+        username:'周杰伦',
+        gender:'男',
+        discription:'<h4 style="color:red; font-weight:bold;">华语乐坛领军人 世代的狂 音乐的王</h4>'
       }
     })
   </script>

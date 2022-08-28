@@ -11,7 +11,7 @@
 <body>
   <!-- 希望 Vue 能够控制下面的这个 div，帮我们在把数据填充到 div 内部 -->
   <div id="app">
-    <p>用户的名字是：{{ username }}</p>
+    <p>用户的名字是：{{username}}</p>
     <input type="text" v-model="username">
     <hr>
     <input type="text" :value="username">
@@ -34,8 +34,8 @@
       el: '#app',
       // data 对象就是要渲染到页面上的数据
       data: {
-        username: 'zhangsan',
-        city: '2'
+        username:'周杰伦',
+        city:'1'
       }
     })
   </script>

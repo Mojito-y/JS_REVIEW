@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:nth-child(5n){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- t1 盒子上下间距-->
+    <div class="div1" style="margin-bottom:10px; background-color: aquamarine; width: 100px;height: 100px;"></div>
+    <div class="div2" style="margin-top:15px; background-color: aquamarine; width: 100px;height: 100px;"></div>
+    <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <script>
+        // t1 哪个不会弹出alert对话框
+        // setTimeout('alert(1)')   //y
+        // new Function('alert(1)')    //n
+        // Promise.resolve(1).then('alert')
+        // eval('alert(1)')
+        // let a = JSON.parse('')
+        // let b = JSON.parse('null')
+        // console.log(a);
+        // console.log(b);
+
+        // t2
+        function Box(){
+            this.name = 'jack'
+            this.age = 21
+        }
+        Box.prototype.name='lee'
+        Box.prototype.age=20
+        Box.prototype.run=function(){
+            return this.name +this.age+'running'
+        }
+        var box1 = new Box()
+        alert(box1.run())
+
+
+
+
+    </script>
+</body>
+</html>

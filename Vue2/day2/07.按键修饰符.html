@@ -25,12 +25,12 @@
       // data 对象就是要渲染到页面上的数据
       data: {},
       methods: {
-        clearInput(e) {
-          console.log('触发了 clearInput 方法')
+        clearInput(e){
+          console.log('clearInput');
           e.target.value = ''
         },
-        commitAjax() {
-          console.log('触发了 commitAjax 方法')
+        commitAjax(e){
+          console.log('commitAjax');
         }
       },
     })

@@ -23,10 +23,10 @@
         <!-- 而且，尽量把 id 作为 key 的值 -->
         <!-- 官方对 key 的值类型，是有要求的：字符串或数字类型 -->
         <!-- key 的值是千万不能重复的，否则会终端报错：Duplicate keys detected -->
-        <tr v-for="(item, index) in list" :key="item.id">
-          <td>{{ index }}</td>
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
+        <tr v-for="(item,index) in list" :key="item.name" :title="item.name + index">
+          <td>{{index+1}}</td>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
         </tr>
       </tbody>
     </table>

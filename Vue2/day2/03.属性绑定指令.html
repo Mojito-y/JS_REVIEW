@@ -11,15 +11,16 @@
 <body>
   <!-- 希望 Vue 能够控制下面的这个 div，帮我们在把数据填充到 div 内部 -->
   <div id="app">
-    <input type="text" :placeholder="tips">
-    <hr>
-    <!-- vue 规定 v-bind: 指令可以简写为 : -->
-    <img :src="photo" alt="" style="width: 150px;">
+   <!-- <input type="text" v-bind:placeholder="tips">  v-bind 动态绑定属性 -->
+   <!-- v-bind简写为: -->
+   <input type="text" :placeholder="tips">
+   <hr>
+   <img :src="photo" alt="" style="width: 200px; height: 200px;">
 
-    <hr>
-    <div>1 + 2 的结果是：{{ 1 + 2 }}</div>
-    <div>{{ tips }} 反转的结果是：{{ tips.split('').reverse().join('') }}</div>
-    <div :title="'box' + index">这是一个 div</div>
+   <hr>
+   <div>1 + 2 的结果是：{{1+2}}</div>
+   <div>{{tips}} 反转的结果是: {{tips.split('').reverse().join('')}}</div>
+   <div :title="'box' + index">这是一个div</div>
   </div>
 
   <!-- 1. 导入 Vue 的库文件，在 window 全局就有了 Vue 这个构造函数 -->
@@ -33,7 +34,7 @@
       // data 对象就是要渲染到页面上的数据
       data: {
         tips: '请输入用户名',
-        photo: 'https://cn.vuejs.org/images/logo.svg',
+        photo: 'https://v2.cn.vuejs.org/images/logo.svg',
         index: 3
       }
     })

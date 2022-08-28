@@ -14,7 +14,7 @@
     <p>count 的值是：{{ count }}</p>
     <!-- 在绑定事件处理函数的时候，可以使用 () 传递参数 -->
     <!-- v-on: 指令可以被简写为 @ -->
-    <button @click="add(1)">+1</button>
+    <button @click="add(2)">+1</button>
     <button @click="sub">-1</button>
   </div>
 
@@ -32,16 +32,12 @@
       },
       // methods 的作用，就是定义事件的处理函数
       methods: {
-        add(n) {
-          // 在 methods 处理函数中，this 就是 new 出来的 vm 实例对象
-          // console.log(vm === this)
-          console.log(vm)
-          // vm.count += 1
+        add(n){
+          console.log(vm);
           this.count += n
         },
-        sub() {
-          // console.log('触发了 sub 处理函数')
-          this.count -= 1
+        sub(){
+          this.count--
         }
       }
     })
