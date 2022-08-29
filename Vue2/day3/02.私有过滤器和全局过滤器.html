@@ -19,13 +19,9 @@
 
   <script src="./lib/vue-2.6.12.js"></script>
   <script>
-    // 使用 Vue.filter() 定义全局过滤器
-    Vue.filter('capi', function (str) {
-      const first = str.charAt(0).toUpperCase()
-      const other = str.slice(1)
-      return first + other + '~~~'
+    Vue.filter('capi',str => {
+      return str.charAt(0).toUpperCase() + str.slice(1) + '--'
     })
-
     const vm = new Vue({
       el: '#app',
       data: {
@@ -52,7 +48,7 @@
     const vm2 = new Vue({
       el: '#app2',
       data: {
-        message: 'heima'
+        message: 'jaychou'
       }
     })
   </script>

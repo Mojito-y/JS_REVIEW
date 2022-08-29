@@ -37,7 +37,7 @@
     <!-- :style 代表动态绑定一个样式对象，它的值是一个 {  } 样式对象 -->
     <!-- 当前的样式对象中，只包含 backgroundColor 背景颜色 -->
     <div class="box" :style="{ backgroundColor: rgb }">
-      {{ rgb }}
+      {{rgb}}
     </div>
     <button @click="show">按钮</button>
   </div>
@@ -60,18 +60,17 @@
           console.log(this.rgb)
         }
       },
-      // 所有的计算属性，都要定义到 computed 节点之下
-      // 计算属性在定义的时候，要定义成“方法格式”
+      // 所有的计算属性 都要定义到computed节点之下
+      // 计算属性在定义时要定义成“方法格式”
       computed: {
-        // rgb 作为一个计算属性，被定义成了方法格式，
-        // 最终，在这个方法中，要返回一个生成好的 rgb(x,x,x) 的字符串
-        rgb() {
-          return `rgb(${this.r}, ${this.g}, ${this.b})`
+        // rgb作为以恶计算属性，被定义成了方法格式 
+        // 最终 在这个方法中，要返回一个生成好的rgb(x,x,x)的字符串
+        rgb(){
+          return `rgb(${this.r},${this.g},${this.b})`
         }
       }
     });
-
-    console.log(vm)
+    console.log(vm);
   </script>
 </body>
 

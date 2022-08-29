@@ -12,22 +12,21 @@
 
   <script src="./lib/axios.js"></script>
   <script>
+    // console.log(axios);
     // http://www.liulongbin.top:3006/api/getbooks
 
     // 1. 调用 axios 方法得到的返回值是 Promise 对象
     axios({
-      // 请求方式
-      method: 'GET',
-      // 请求的地址
+      method:'get',
       url: 'http://www.liulongbin.top:3006/api/getbooks',
       // URL 中的查询参数
-      params: {
-        id: 1
+      params:{
+        id:1
       },
       // 请求体参数
-      data: {}
-    }).then(function (result) {
-      console.log(result)
+      data:{}
+    }).then(books => {
+      console.log(books.data);
     })
   </script>
 </body>

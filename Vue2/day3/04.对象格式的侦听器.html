@@ -25,14 +25,14 @@
       // 所有的侦听器，都应该被定义到 watch 节点下
       watch: {
         // 定义对象格式的侦听器
-        username: {
-          // 侦听器的处理函数
-          handler(newVal, oldVal) {
-            console.log(newVal, oldVal)
+        username:{
+          // 侦听器的处理函数 handler 是固定写法，表示当 username 的值变化时，自动调用 handler 处理函数
+          handler(newVal,oldVal){
+            console.log(newVal,oldVal);
           },
-          // immediate 选项的默认值是 false
-          // immediate 的作用是：控制侦听器是否自动触发一次！
-          immediate: true
+          // immediate的默认值是false
+          // true表示页面初次渲染好之后，就立即触发当前的 watch 侦听器
+          immediate:true
         }
       }
     })
