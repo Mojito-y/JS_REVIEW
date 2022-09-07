@@ -15,19 +15,20 @@
     // console.log(axios);
     // http://www.liulongbin.top:3006/api/getbooks
 
-    // 1. 调用 axios 方法得到的返回值是 Promise 对象
-    axios({
+    // 1.调用axios方法得到的返回值是promise对象
+    let result = axios({
       method:'get',
       url: 'http://www.liulongbin.top:3006/api/getbooks',
-      // URL 中的查询参数
+      // url中的查询参数——get
       params:{
         id:1
       },
-      // 请求体参数
-      data:{}
-    }).then(books => {
-      console.log(books.data);
-    })
+      // 请求体参数——post
+      data:{
+
+      }
+    }).then(books => console.log(books))
+    console.log(result);
   </script>
 </body>
 

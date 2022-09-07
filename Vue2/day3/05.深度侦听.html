@@ -23,9 +23,9 @@
       data: {
         // 用户的信息对象
         info: {
-          username: 'admin',
+          username: 'jaychou',
           address: {
-            city: '北京'
+            city: '台北'
           }
         }
       },
@@ -42,8 +42,8 @@
         'info.username'(newVal) {
           console.log(newVal)
         },
-        'info.address.city'(newVal){
-          console.log(newVal);
+        'info.address.city'(newVal,oldVal){
+          console.log(newVal,oldVal);
         },
       }
     })

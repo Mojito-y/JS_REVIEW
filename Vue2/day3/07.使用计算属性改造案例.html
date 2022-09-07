@@ -41,7 +41,6 @@
     </div>
     <button @click="show">按钮</button>
   </div>
-
   <script>
     // 创建 Vue 实例，得到 ViewModel
     var vm = new Vue({
@@ -63,8 +62,6 @@
       // 所有的计算属性 都要定义到computed节点之下
       // 计算属性在定义时要定义成“方法格式”
       computed: {
-        // rgb作为以恶计算属性，被定义成了方法格式 
-        // 最终 在这个方法中，要返回一个生成好的rgb(x,x,x)的字符串
         rgb(){
           return `rgb(${this.r},${this.g},${this.b})`
         }

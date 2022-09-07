@@ -16,7 +16,7 @@ module.exports = {
         host:'127.0.0.1',   //实时打包所使用的主机地址
         port: 8081,     //实时打包所使用的端口号
     },
-    // 代表webpack的运行模式 可选值有两个 development和production
+    // mode配置项代表webpack的运行模式 可选值有两个 development和production
     // 结论：开发的时候一定要使用development 因为追求的是打包的速度
     // 反过来 发布上线一定要用production 因为上线追求的是体积小
     mode:'development',
