@@ -19,7 +19,7 @@
 // 1. 导入需要使用的 .vue 组件
 import LeftVue from './components/Left.vue';
 import RightVue from './components/Right.vue';
-export default {
+export default {            
   data() {
     return {
       flag: true
@@ -38,6 +38,7 @@ export default {
   padding: 1px 20px 20px;
   background-color: #efefef;
 }
+
 .box {
   display: flex;
 }
