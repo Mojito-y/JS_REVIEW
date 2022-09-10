@@ -1,40 +1,39 @@
 <template>
   <div class="app-container">
-    <h1>App 根组件 --- {{ countFromSon }}</h1>
-    <p>{{ userinfo }}</p>
+    <h1>App 根组件 --- {{countFromSon}}</h1>
+    <p>{{userinfo}}</p>
     <hr />
 
     <div class="box">
       <!-- 渲染 Left 组件和 Right 组件 -->
       <Left :msg="message" :user="userinfo"></Left>
-      <Right @numchange="getNewCount"></Right>
+      <Right @numChange="getNewCount"></Right>
     </div>
   </div>
 </template>
 
 <script>
-import Left from '@/components/Left.vue'
-import Right from '@/components/Right.vue'
-
+  import Left from './components/Left.vue'
+  import Right from './components/Right.vue'
 export default {
-  data() {
+  data () {
     return {
-      message: 'hello 132 的宝们！',
-      userinfo: { name: 'wsc', age: 18 },
+      message:'hello jaychou',
+      userinfo:{name:'周杰伦',age:18},
       // 定义 countFromSon 来接收子组件传递过来的数据
-      countFromSon: 0
+      countFromSon:0
     }
   },
-  methods: {
-    // 获取子组件传递过来的数据
-    getNewCount(val) {
-      console.log('numchange 事件被触发了！', val)
-      this.countFromSon = val
-    }
-  },
+  // 注册组件
   components: {
     Left,
     Right
+  },
+  methods: {
+    getNewCount(val){
+      console.log('numChange事件被触发了！'+val);
+      this.countFromSon = val
+    }
   }
 }
 </script>

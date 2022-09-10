@@ -22,7 +22,6 @@ export default {
       type:Number,
       // 必填项校验
       required:true
-
     }
   },
   data () {
