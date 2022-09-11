@@ -2,15 +2,21 @@
   <div class="right-container">
     <h3>Right 组件 --- {{count}}</h3>
     <button @click="add">+1</button>
+    <hr>
+    <p>{{msgFromLeft}}</p>
   </div>
 </template>
 
 <script>
+// 1.导入eventBus.js模块
+import bus from "./eventBus";
+
 export default {
   data () {
     return {
       // 子组件自己的数据 将来希望把count值传给父组件
-      count:0
+      count:0,
+      msgFromLeft:''
     }
   },
   methods: {
@@ -19,6 +25,13 @@ export default {
       // 修改数据时 通过$emit() 触发自定义事件 传给父组件
       this.$emit('numChange',this.count);
     }
+  },
+  created () {
+    // 2.为bus绑定自定义事件
+    bus.$on('share', val => {
+      console.log('在Right组件中定义的share被触发啦！' + val);
+      this.msgFromLeft = val
+    })
   }
 }
 </script>
