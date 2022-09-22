@@ -1,7 +1,7 @@
 <template>
   <div class="number-container d-flex justify-content-center align-items-center">
     <!-- 减 1 的按钮 -->
-    <button type="button" class="btn btn-light btn-sm">-</button>
+    <button type="button" class="btn btn-light btn-sm" @click="sub">-</button>
     <!-- 购买的数量 -->
     <span class="number-box">{{num}}</span>
     <!-- 加 1 的按钮 -->
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import bus from '../eventBus';
 export default {
   props: {
     // 接收到的num数量值
@@ -30,7 +31,15 @@ export default {
       // 要发送给App的数据格式为{id,value} value是u商品最新的购买数量
       const obj = {id:this.id,value:this.num + 1};
       // 通过EventBus把obj对象发送给App组件
-      console.log(obj);
+      bus.$emit('share', obj);
+    },
+    sub(){
+      // 要发送给App的数据格式为{id,value} value是u商品最新的购买数量
+      if (this.num > 1) {
+        const obj = {id:this.id,value:this.num - 1};
+        // 通过EventBus把obj对象发送给App组件
+        bus.$emit('share', obj);
+      } 
     }
   }
 }

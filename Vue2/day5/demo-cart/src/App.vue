@@ -14,7 +14,7 @@
       :count="item.goods_count"
       @state-change="getNewState"
     ></Goods>
-    <Footer :isfull="fullState" :amount="amount" @full-change="getFullState"></Footer>
+    <Footer :isfull="fullState" :amount="amount" :all="total" @full-change="getFullState"></Footer>
   </div>
 </template>
 
@@ -25,6 +25,8 @@ import axios from 'axios'
 import Header from './components/Header/Header.vue'
 import Goods from './components/Goods/Goods.vue'
 import Footer from './components/Footer/Footer.vue'
+
+import bus from './components/eventBus'
 export default {
   data () {
     return {
@@ -44,10 +46,22 @@ export default {
       return this.list
       .filter(item => item.goods_state)
       .reduce((total,item) => total += item.goods_price * item.goods_count,0)
+    },
+    // 已勾选商品的总数量
+    total(){
+      return this.list.filter(item => item.goods_state).reduce((t,item) => t += item.goods_count,0)
     }
   },
   created () {
     this.initCartList();
+    bus.$on('share',val => {
+      this.list.some(item => {
+        if (item.id === val.id) {
+          item.goods_count = val.value
+          return true
+        }
+      })
+    });
   },
   components: {
     Header,

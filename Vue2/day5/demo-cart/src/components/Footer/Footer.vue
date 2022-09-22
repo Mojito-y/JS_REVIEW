@@ -13,7 +13,7 @@
     </div>
 
     <!-- 结算按钮 -->
-    <button type="button" class="btn btn-primary btn-settle">结算（{{ 0 }}）</button>
+    <button type="button" class="btn btn-primary btn-settle">结算（{{ all }}）</button>
   </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
     },
     // 总价格
     amount:{
+      type:Number,
+      default:0
+    },
+    // 已勾选的商品的总数量
+    all:{
       type:Number,
       default:0
     }
