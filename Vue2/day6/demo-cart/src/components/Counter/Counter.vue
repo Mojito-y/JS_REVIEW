@@ -1,16 +1,33 @@
 <template>
   <div class="number-container d-flex justify-content-center align-items-center">
     <!-- 减 1 的按钮 -->
-    <button type="button" class="btn btn-light btn-sm">-</button>
+    <button type="button" class="btn btn-light btn-sm" @click="sub">-</button>
     <!-- 购买的数量 -->
-    <span class="number-box">1</span>
+    <span class="number-box">{{num}}</span>
     <!-- 加 1 的按钮 -->
-    <button type="button" class="btn btn-light btn-sm">+</button>
+    <button type="button" class="btn btn-light btn-sm" @click="add">+</button>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    // 要展示的商品的数量
+    num:{
+      type:Number,
+      default:1
+    }
+  },
+  methods: {
+    add(){
+      // 通过自定义事件的方法 把最新的数量值发送给父组件
+      this.$emit('num-add',this.num + 1)
+    },
+    sub(){
+      this.$emit('num-sub',this.num - 1)
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>

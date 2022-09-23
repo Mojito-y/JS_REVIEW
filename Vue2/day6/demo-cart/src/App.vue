@@ -12,7 +12,9 @@
       :price="item.goods_price"
       :state="item.goods_state"
       @state-change="getNewState"
-    ></Goods>
+    >
+    <Counter :num="item.goods_count" @num-add="getNewNum(item,$event)" @num-sub="getNewNum(item,$event)"></Counter>
+  </Goods>
 
     <!-- Footer 区域 -->
     <Footer :isfull="fullState" :amount="amt" :all="total" @full-change="getFullState"></Footer>
@@ -26,7 +28,7 @@ import axios from 'axios'
 import Header from '@/components/Header/Header.vue'
 import Goods from '@/components/Goods/Goods.vue'
 import Footer from '@/components/Footer/Footer.vue'
-
+import Counter from './components/Counter/Counter.vue'
 export default {
   data() {
     return {
@@ -81,12 +83,20 @@ export default {
     // 接收 Footer 子组件传递过来的全选按钮的状态
     getFullState(val) {
       this.list.forEach(item => (item.goods_state = val))
+    },
+    // 获取Counter组件发过来的最新的数量值
+    getNewNum(item,e){
+      console.log(item,e);
+      if (e >= 1) {
+        item.goods_count = e
+      }
     }
   },
   components: {
     Header,
     Goods,
-    Footer
+    Footer,
+    Counter
   }
 }
 </script>
