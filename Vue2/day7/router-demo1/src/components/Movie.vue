@@ -1,12 +1,31 @@
 <template>
   <div class="movie-container">
-    <h3>Movie 组件</h3>
+    <!-- this.$route 是路由的“参数对象” -->
+    <!-- this.$router 是路由的“导航对象” -->
+    <h3>Movie 组件 --- {{$route.params.mid}} --- {{mid}}</h3>
+    <button @click="showThis">打印this</button>
+    <button @click="goback">后退</button>
+    <!-- 在行内使用编程式导航跳转的时候 this必须要省略 -->
+    <button @click="$router.forward()">forward前进</button>
+    <button @click="$router.back()">back后退</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Movie'
+  name: 'Movie',
+  // 接收 props 数据
+  props: ['mid'],
+  methods: {
+    showThis(){
+      console.log(this);
+    },
+    goback(){
+      // go(-1)表示后退一层
+      // 如果后退的层数超过上限 则原地不动
+      this.$router.go(-1); //后退到之前的页面
+    }
+  }
 }
 </script>
 
