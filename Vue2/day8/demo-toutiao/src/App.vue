@@ -1,11 +1,17 @@
 <template>
   <div>
-    <h1>App 根组件</h1>
+    <!-- 路由占位符 -->
+    <router-view></router-view>
+    <!-- Tabbar 区域 -->
+    <van-tabbar route placeholder>
+      <van-tabbar-item to="/" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item to="/user" icon="user-o">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 <script>
 export default {
-  name: '',
+  name: 'App',
 }
 </script>
 <style lang="less" scoped>
